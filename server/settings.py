@@ -127,3 +127,24 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+
+
+
+SWAGGER_SETTINGS = {
+    "USE_SESSION_AUTH": False,
+
+    "SECURITY_DEFINITIONS": {
+        "Bearer": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+            "description": "Enter: Bearer <your access token>",
+        },
+    },
+
+    "SECURITY_REQUIREMENTS": [
+        {"Bearer": []}
+    ],
+}
+
